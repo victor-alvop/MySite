@@ -1,7 +1,21 @@
-{% for item in item_list %}
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block body %}
+    {% for item in item_list %}
     <ul>
         <li>
             <a href="{% url 'food:detail' item.id %}"> {{item.id}}. {{item.item_name}} </a>
         </li>
     </ul>
 {% endfor %}
+{% endblock %}
+</body>
+</html>
