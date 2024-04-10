@@ -4,11 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Details</title>
 </head>
 <body>
     {% block body %}
-    <h3>{{ item_selected.item_name }} is ${{item_selected.item_price}}</h3> 
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img src="{{item_selected.item_image}}" class="img-fluid mt-3 mt-md-5">
+            </div>
+            <div class="col-12 col-md mt-3 mt-md-5">
+                <h3>{{ item_selected.item_name }}</h3>
+                <h5>${{item_selected.item_price}}</h5>
+                <p>{{item_selected.item_description}}</p>
+            </div>
+        </div>
+    </div>
     {% endblock %}
 
 </body>
