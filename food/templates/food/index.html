@@ -9,13 +9,27 @@
 
 <body>
     {% block body %}
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+
     {% for item in item_list %}
-    <ul>
-        <li>
-            <a href="{% url 'food:detail' item.id %}"> {{item.id}}. {{item.item_name}} </a>
-        </li>
-    </ul>
-{% endfor %}
+    <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <img src="{{item.item_image}}" class="card-img-top"/>
+            <div class="card-body">
+                <h5 class="card-title">{{item.item_name}}</h5>
+                <p class="card-text">{{item.item_description}}</p>
+                <p class="card-text">{{item.item_price}}</p>
+                <a href="{% url 'food:detail' item.id%}" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+        </div>
+    </div>
+
 {% endblock %}
 </body>
 </html>
