@@ -17,6 +17,8 @@
                 <h3>{{ item_selected.item_name }}</h3>
                 <h5>${{item_selected.item_price}}</h5>
                 <p>{{item_selected.item_description}}</p>
+                <a href="{% url 'food:delete_item' item_selected.id %}" class="btn btn-outline-danger">Delete</a>
+
             </div>
         </div>
     </div>

@@ -1,6 +1,19 @@
 body{
     background-color: aqua;
 }
+
 .navbar-custom {
-    background-color: #ff8000; /* Código hexadecimal del color orange-300 */
+    background-color: #ff8000;
   }
+
+.custom-btn {
+    background-color: #ff9900 !important; /* Cambia el color de fondo */
+    border-color: #ff9900; /* Cambia el color del borde */
+    color: #fff; /* Cambia el color del texto */
+}
+
+.custom-btn:hover {
+    background-color: #e68a00; /* Cambia el color de fondo al pasar el ratón */
+    border-color: #e68a00; /* Cambia el color del borde al pasar el ratón */
+    /* Agrega más estilos para el hover según sea necesario */
+}
