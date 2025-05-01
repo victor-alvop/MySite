@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Shake</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/datashake.css') }}">
+    </head>
+<body>
+    <header>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='assets/img/DataShakeLogo-NoBackground.png') }}" width="50px" height="50px" alt="Logo">
+      </div>
+    
+      <nav class="nav-buttons">
+        <ul>
+          <li data-target="experience"> 
+              <a href="{{ url_for('home.home') }}">Home</a>
+            </li>
+            <li>
+              <a href="/docs" class="btn">Read Docs</a>
+            </li>
+      </ul>
+      </nav>
+    </header>
+    <div class="form-card">
+        <form method="POST" action="{{ url_for('datashake.datashake_index') }}">
+            <div class="input-group">
+                <label for="first_name">Name</label>
+                <input type="text" name="name-form" placeholder="Morty">
+            </div>
+            <div class="input-group">
+                <label for="last_name">Department</label>
+                <select name="department-user" id="department-user">
+                  <option value="none">- Select one -</option>
+                  <option value="Data">Data</option>
+                  <option value="HR">HR</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Devs">Devs</option>
+                  <option value="DevOps">DevOps</option>
+                  <option value="Marketing">Martketing</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="age">Salary</label>
+                <input type="number" step="0.01" name="salary-form" required>
+            </div>
+            <div class="input-group">
+                <label for="amount">Hours</label>
+                <input type="text" name="hours-form" placeholder="8">
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+
+    <div class="data-managment">
+        <div class="data-group" id="column-selection">
+          <form method="POST" class="no-style" action="{{ url_for('datashake.data_transformation') }}">
+            <h4>Data transformation</h4>
+            <label for="db-selection">Select Database</label>
+            <select name="db-selection" id="db-selection">
+              <option value="select-one">- Select One -</option>
+              <option value="source-database">Source Database</option>
+              <option value="target-database">Target Database</option>
+            </select>
+            <div id="origin-db-options" style="display: none;">
+              <label for="origin-selection">Select source DB column</label>
+            <select name="origin-selection" id="origin-selection" required>
+                  <option value="select-">- Select one -</option>
+              {% for col in source_column_names %}
+                {% if col != "id"%}
+                  <option value="{{col}}">{{ col }}</option>
+                {% endif%}
+              {% endfor %}
+            </select>
+
+            </div>
+            <div id="text-fields" style="display: none;">
+              <label for="data-text-transformation">Text transformation</label>
+              <select name="data-text-transformation" id="data-text-transformation">
+                <option value="select-">- Select one -</option>
+                <option value="concatenate">Concatenate</option>
+                <option value="replace">Replace</option>
+                <option value="lower">Lower</option>
+                <option value="upper">Upper</option>
+              </select>
+              <div id="concatenate-fields" style="display: none;">
+                <label for="text-input-transformation">Concatenate with</label>
+                <input  name="concat-text" type="text" placeholder="Write a word to concatenate">
+              </div>
+              <div id="replace-fields" style="display: none;">
+                <label for="text-input-transformation">Replace</label>
+                <input  name="text-to-replace" type="text" placeholder="Word to replace">
+                <label for="text-input-transformation">With</label>
+                <input name="replace-with" type="text" placeholder="Replace word">
+              </div>
+            </div>
+            <div id="number-fields" style="display: none;">
+              <label for="data-num-transformation">Transformation</label>
+              <select name="data-num-transformation" id="data-num-transformation">
+                <option value="none">- Select one -</option>
+                <option value="sum">+</option>
+                <option value="min">-</option>
+                <option value="multiply">x</option>
+                <option value="div">/</option>
+              </select>
+              <label for="number-input-transformation">Number</label>
+              <input name="number-input-transformation" id="number-input-transformation" type="text" placeholder="0">
+            </div>
+            <div id="target-db-fields" style="display: none;">
+              <label for="target-selection">Select target DB column</label>
+            <select name="target-selection" id="target-selection">
+                  <option value="none-">- Select one -</option>
+                  <option value="employee-count">Employee count</option>
+                  <option value="avg-salary">Avg Salary</option>
+                  <option value="avg-hours">Avg Hours</option>
+            </select>
+
+            </div>
+            <div class="input-group">
+              <input type="submit" value="Transform Data">
+          </div>
+      </form>
+        </div>
+
+        <div class="data-group">
+          <h4>Source Database</h4>
+            <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      {% for col in source_column_names %}
+                        {% if col != "id" %}
+                          <th>{{ col }}</th>
+                        {% endif%}
+                      {% endfor %}
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for employee in employees %}
+                        <tr>
+                          <td>{{ employee.name }}</td>
+                          <td>{{ employee.department }}</td>
+                          {% if employee.salary == None %}
+                            <td>0.00</td>
+                          {% else %}
+                            <td>{{ employee.salary }}</td>
+                          {% endif %}
+                          <td>{{ employee.hours }}</td>
+                        </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+        </div>
+        
+        <div class="data-group">
+            <h4>Target Database</h4>
+            <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Department</th>
+                      <th>Employee count</th>
+                      <th>Avg Salary</th>
+                      <th>Avg Hours</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for summary in summaries %}
+                    <tr>
+                      <td>{{ summary.department }}</td>
+                      <td>{{ summary.employee_count }}</td>
+                      <td>{{ summary.salary_sum }}</td>
+                      <td>{{ summary.hours_sum }}</td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            
+        </div>
+    </div>
+  <script src="{{ url_for('static', filename='js/dataShakeScript.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Portafolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header>
+    <div class="logo">Victor Alvarado</div>
+    <nav>
+      <ul>
+        <li data-target="experience">Experience</li>
+        <li data-target="projects">Projects</li>
+        <li class="dark-toggle">◑</li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi <span>I´m Víctor 👋</span> a software engineer crafting smart solutions through <span>data</span> and <span>code.</span></h1>
+    <div class="cta">
+      <button>Download CV</button>
+      <a href="https://www.linkedin.com/in/victor-aapv/" target="_blank"><button>LinkedIn</button></a>
+      <a href="mailto:vmalvaradop0@gmail.com"><button>Email</button></a>
+      <a href="https://github.com/victor-alvop" target="_blank"><button>Github</button></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Me</h2>
+    <p>Hello, I am Victor, a software engineer skilled in building scalable and functional platforms. I am always guided
+      by my three core principles: 
+      <br><br>
+      <li><b>Effective communication: </b>Because collaboration and clarity are key to any successful project.</li>
+      <li><b>Agile solutions: </b>As I believe in adapting quickly to change and delivering incremental value.</li>
+      <li><b>Autonomous learning: </b>Since the tech world moves fast, and staying ahead means being curious and self-driven.</li>
+      <br>
+      Currently, I am seeking an opportunity that presents new challenges and helps solidify my knowledge.</p>
+  </section>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience">
+      <div>
+        <br>
+        <h2>TechOps Analyst at Konfront (Remote)</h2>
+        <p><strong>October 2022 – Present</strong></p>
+        <br>
+        <h3>🧑‍💻 Software Engineering Experience</h3>
+        <ul>
+          <li><strong>System Design & Development:</strong> Spearheaded the end-to-end development of multiple systems from scratch using <code>Bubble.io</code>, focusing on scalability, usability, and performance.</li>
+          <li><strong>Project & Team Leadership:</strong> Led a team of two members, coordinating the execution of <strong>four operational projects</strong> that served a <strong>user base of over 16,000</strong>. Responsibilities included task management, sprint planning, and aligning tech goals with business objectives.</li>
+          <li><strong>API Development:</strong> Built and maintained APIs using <code>AWS API Gateway</code> and <code>AWS Lambda</code>, ensuring secure and efficient communication between system modules and external services.</li>
+          <li><strong>Database Architecture:</strong> Designed and maintained relational databases with <strong>around 90 well-structured tables per project</strong>, optimizing schema for scalability, indexing, and relational integrity.</li>
+          <li><strong>Bug Fixing & Maintenance:</strong> Consistently identified, debugged, and resolved system issues in production environments, improving system reliability and user satisfaction.</li>
+        </ul>
+        <br>
+        <h3>📊 Data Engineering & Automation Experience</h3>
+        <ul>
+          <li><strong>Web Scraping & Data Extraction:</strong> Developed Python-based web scraping bots to automate the extraction of relevant data from external platforms, improving data availability for internal processes.</li>
+          <li><strong>Invoice Automation & Compliance:</strong> Integrated an <strong>Invoice API</strong> aligned with government regulations, leading to the <strong>automated creation of over 7,400 compliant invoices</strong>. Ensured precision and legal alignment in every transaction.</li>
+          <li><strong>ETL & KPI Automation:</strong> Designed and implemented a complete <strong>ETL strategy</strong> to automate the generation of KPI dashboards. This included data collection, transformation, and visualization for multiple ongoing projects.</li>
+          <li><strong>Operational Data Strategy:</strong> Contributed to the creation of a robust data strategy that aligned technical solutions with business intelligence needs, enabling better decision-making across departments.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Sales Manager at GRACECO S.A.P.I. de C.V (On-site)</h2>
+        <p><strong>January 2022 – October 2022</strong></p>
+        <br>
+        <h3>📈 Sales Operations & Data Management</h3>
+        <ul>
+          <li><strong>Client & Payment Database Structuring:</strong> Organized and maintained Excel-based databases for clients and payment records to ensure accuracy and traceability.</li>
+          <li><strong>Sales Dashboard Development:</strong> Designed and implemented a dashboard to visualize key sales metrics, improving data accessibility and decision-making.</li>
+          <li><strong>Reporting & Communication:</strong> Compiled and shared monthly sales reports with stakeholders, ensuring transparency and alignment across teams.</li>
+        </ul>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="{{ url_for('static', filename='assets/img/DataShakeLogo-2.png') }}">
+        <h3>Data Shake</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">ETL</span>
+        </div>
+        <p>After a shake, everything just hits different. This is a no code ETL tool perfect to extract, transform and load data from different Databases.</p>
+        <a href="{{ url_for('datashake.datashake_index') }}">
+            <button>Try</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='assets/img/youtubeAnalizer.png') }}"/>
+        <h3>Youtube Analizer</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Data analysis</span>
+          <span class="tag">Chat GPT API</span>
+        </div>
+        <p>Don’t get canceled by your audience.
+          Use this YouTube Audience Analyzer to get objective recommendations for your videos, community management, and comment moderation. Understand your viewers better and grow your channel with confidence.</p>
+        <button>Comming Soon</button>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='assets/img/hrAnalizer.png') }}"/>
+        <h3>The best candidate</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Data analysis</span>
+          <span class="tag">Chat GPT API</span>
+        </div>
+        <p>A fast candidate resume analyzer, just upload the resumen and the candidate URLs and get a summary of their skills, experience, projects and how can the help you.</p>
+        <button>Comming soon</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:vmalvaradop0@gmail.com">📧 vmalvaradop0@gmail.com</a>
+      <a href="https://www.linkedin.com/in/victor-aapv/" target="_blank">💼 LinkedIn</a>
+      <a href="https://wa.me/+523311217195" target="_blank">📱 WhatsApp</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Victor. All rights reserved.</p>
+  </footer>
+  
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
