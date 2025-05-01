@@ -39,6 +39,28 @@
       <br>
       Currently, I am seeking an opportunity that presents new challenges and helps solidify my knowledge.</p>
   </section>
+  <section id="strengths">
+    <h2>Technologies</h2>
+    <div class="technologies" id="technologies">
+      <span class="tag" id="tag-python">Python</span>
+      <span class="tag" id="tag-java">Java</span>
+      <span class="tag" id="tag-html">HTML</span>
+      <span class="tag" id="tag-css">CSS</span>
+      <span class="tag" id="tag-js">JavaScript</span>
+      <span class="tag" id="tag-flask">Flask</span>
+      <span class="tag" id="tag-django">Django</span>
+      <span class="tag" id="tag-postgresql">PostgreSQL</span>
+      <span class="tag" id="tag-mongodb">Mongo DB</span>
+      <span class="tag" id="tag-airflow">Airflow</span>
+      <span class="tag" id="tag-mwaa">AWS Airflow (MWAA)</span>
+      <span class="tag" id="tag-pyspark">PySpark</span>
+      <span class="tag" id="tag-lambda">AWS Lambda</span>
+      <span class="tag" id="tag-api-gateway">AWS API Gateway</span>
+      <span class="tag" id="tag-powerbi">Power BI</span>
+      <span class="tag" id="tag-looker">Looker Studio</span>
+    </div>
+  </section>
+  
   <section id="experience">
     <h2>Experience</h2>
     <div class="experience">
@@ -48,20 +70,23 @@
         <p><strong>October 2022 – Present</strong></p>
         <br>
         <h3>🧑‍💻 Software Engineering Experience</h3>
+        <br>
         <ul>
-          <li><strong>System Design & Development:</strong> Spearheaded the end-to-end development of multiple systems from scratch using <code>Bubble.io</code>, focusing on scalability, usability, and performance.</li>
-          <li><strong>Project & Team Leadership:</strong> Led a team of two members, coordinating the execution of <strong>four operational projects</strong> that served a <strong>user base of over 16,000</strong>. Responsibilities included task management, sprint planning, and aligning tech goals with business objectives.</li>
-          <li><strong>API Development:</strong> Built and maintained APIs using <code>AWS API Gateway</code> and <code>AWS Lambda</code>, ensuring secure and efficient communication between system modules and external services.</li>
-          <li><strong>Database Architecture:</strong> Designed and maintained relational databases with <strong>around 90 well-structured tables per project</strong>, optimizing schema for scalability, indexing, and relational integrity.</li>
+          <li><strong>System Design & Development:</strong> Spearheaded the end-to-end development of multiple systems from scratch using Bubble.io, focusing on scalability, usability, and performance.</li>
+          <li><strong>API Development:</strong> Built and maintained python APIs using <code>AWS API Gateway</code> and <code>AWS Lambda</code>, ensuring secure and efficient communication between systems.</li>
+          <li><strong>Invoice Automation & Compliance:</strong> Integrated an Invoice API aligned with government regulations, leading to the automated creation of over 7,400 compliant invoices. Ensured precision and legal alignment in every transaction.</li>
           <li><strong>Bug Fixing & Maintenance:</strong> Consistently identified, debugged, and resolved system issues in production environments, improving system reliability and user satisfaction.</li>
+          <li><strong>Project & Team Leadership:</strong> Led a team of two members, coordinating the execution of four operational projects that served a user base of over 16,000. Responsibilities included task management, sprint planning, and aligning tech goals with business objectives.</li>
         </ul>
         <br>
         <h3>📊 Data Engineering & Automation Experience</h3>
+        <br>
         <ul>
-          <li><strong>Web Scraping & Data Extraction:</strong> Developed Python-based web scraping bots to automate the extraction of relevant data from external platforms, improving data availability for internal processes.</li>
-          <li><strong>Invoice Automation & Compliance:</strong> Integrated an <strong>Invoice API</strong> aligned with government regulations, leading to the <strong>automated creation of over 7,400 compliant invoices</strong>. Ensured precision and legal alignment in every transaction.</li>
-          <li><strong>ETL & KPI Automation:</strong> Designed and implemented a complete <strong>ETL strategy</strong> to automate the generation of KPI dashboards. This included data collection, transformation, and visualization for multiple ongoing projects.</li>
           <li><strong>Operational Data Strategy:</strong> Contributed to the creation of a robust data strategy that aligned technical solutions with business intelligence needs, enabling better decision-making across departments.</li>
+          <li><strong>Database Architecture:</strong> Designed and maintained relational SQL databases with around 90 well-structured tables per project, optimizing schema for scalability, indexing, and relational integrity.</li>
+          <li><strong>Web Scraping & Data Extraction:</strong> Developed Python-based web scraping bots to automate the extraction of relevant data from external platforms, improving data availability for internal processes.</li>
+          <li><strong>ETL & KPI Automation:</strong> Designed and implemented a complete ETL strategy to automate the generation of KPI dashboards. This included data collection, transformation, and visualization for multiple ongoing projects.</li>
+          <li><strong>ETL Flow Development with AWS Airflow and PySpark:</strong> Built ETL pipelines using AWS Airflow and PySpark to construct a data warehouse that enables financial, user behavior, and transactional analysis of the application.</li>
         </ul>
       </div>
       <div>
@@ -69,6 +94,7 @@
         <p><strong>January 2022 – October 2022</strong></p>
         <br>
         <h3>📈 Sales Operations & Data Management</h3>
+        <br>
         <ul>
           <li><strong>Client & Payment Database Structuring:</strong> Organized and maintained Excel-based databases for clients and payment records to ensure accuracy and traceability.</li>
           <li><strong>Sales Dashboard Development:</strong> Designed and implemented a dashboard to visualize key sales metrics, improving data accessibility and decision-making.</li>
@@ -86,10 +112,10 @@
         <img src="{{ url_for('static', filename='assets/img/DataShakeLogo-2.png') }}">
         <h3>Data Shake</h3>
         <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">ETL</span>
+          <span class="tag" id="tag-python">Python</span>
+          <span class="tag" id="tag-flask">Flask</span>
+          <span class="tag" id="tag-postgresql">PostgreSQL</span>
+          <span class="tag" id="tag-etl"> ETL</span>
         </div>
         <p>After a shake, everything just hits different. This is a no code ETL tool perfect to extract, transform and load data from different Databases.</p>
         <a href="{{ url_for('datashake.datashake_index') }}">
@@ -100,11 +126,11 @@
         <img src="{{ url_for('static', filename='assets/img/youtubeAnalizer.png') }}"/>
         <h3>Youtube Analizer</h3>
         <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Data analysis</span>
-          <span class="tag">Chat GPT API</span>
+          <span class="tag" id="tag-python">Python</span>
+          <span class="tag" id="tag-flask">Flask</span>
+          <span class="tag" id="tag-postgresql">PostgreSQL</span>
+          <span class="tag" id="tag-data-analysis">Data analysis</span>
+          <span class="tag" id="tag-chatgpt">Chat GPT API</span>
         </div>
         <p>Don’t get canceled by your audience.
           Use this YouTube Audience Analyzer to get objective recommendations for your videos, community management, and comment moderation. Understand your viewers better and grow your channel with confidence.</p>
@@ -114,15 +140,36 @@
         <img src="{{ url_for('static', filename='assets/img/hrAnalizer.png') }}"/>
         <h3>The best candidate</h3>
         <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Data analysis</span>
-          <span class="tag">Chat GPT API</span>
+          <span class="tag" id="tag-python">Python</span>
+          <span class="tag" id="tag-flask">Flask</span>
+          <span class="tag" id="tag-postgresql">PostgreSQL</span>
+          <span class="tag" id="tag-data-analysis">Data analysis</span>
+          <span class="tag" id="tag-chatgpt">Chat GPT API</span>
         </div>
         <p>A fast candidate resume analyzer, just upload the resumen and the candidate URLs and get a summary of their skills, experience, projects and how can the help you.</p>
         <button>Comming soon</button>
       </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Completed Courses</h2>
+    <div class="courses-container">
+      <div class="course-card">
+        <h3>Python for Data Science</h3>
+        <p>IBM – Coursera</p>
+        <div class="cta">
+          <a href="#" target="_blank"><button>View Certificate</button></a>
+        </div>
+      </div>
+      <div class="course-card">
+        <h3>Modern Web Development</h3>
+        <p>Meta – Coursera</p>
+        <div class="cta">
+          <a href="#" target="_blank"><button>View Certificate</button></a>
+        </div>
+      </div>
+      <!-- Agrega más cursos aquí -->
     </div>
   </section>
 
@@ -132,7 +179,7 @@
       <a href="https://www.linkedin.com/in/victor-aapv/" target="_blank">💼 LinkedIn</a>
       <a href="https://wa.me/+523311217195" target="_blank">📱 WhatsApp</a>
     </div>
-    <p class="footer-copy">&copy; 2025 Victor. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2025 Created by Victor Alvarado</p>
   </footer>
   
 

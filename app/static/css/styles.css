@@ -132,10 +132,11 @@
   
   .card {
     background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
+    
     border-radius: 16px;
     overflow: hidden;
     max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
   
   
@@ -154,6 +155,17 @@
     gap: 0.5rem;
     flex-wrap: wrap;
   }
+
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre las etiquetas */
+    margin-top: 10px;
+  }
+
+  .technologies .tag{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
   
   .tag {
     background-color: var(--accent-color);
@@ -162,6 +174,26 @@
     padding: 0.2rem 0.5rem;
     border-radius: 6px;
   }
+
+  #tag-python { background-color: #0b95da; }
+  #tag-java { background-color: #ff0000; }
+  #tag-html { background-color: #e34c26; }
+  #tag-css { background-color: #264de4; }
+  #tag-js { background-color: #f0db4f; color: #000; }
+  #tag-flask { background-color: #000000; }
+  #tag-django { background-color: #006319; }
+  #tag-postgresql { background-color: #336791; }
+  #tag-mongodb { background-color: #47A248; }
+  #tag-data-analysis { background-color: #7d05b8; }
+  #tag-chatgpt { background-color: #10a37f; }
+  #tag-airflow { background-color: #017cee; }
+  #tag-pyspark { background-color: #f94f00; }
+  #tag-mwaa { background-color: #232f3e; }
+  #tag-lambda { background-color: #ff9900; }
+  #tag-api-gateway { background-color: #f7df1e; color: #000; }
+  #tag-powerbi { background-color: #f2c811; color: #000; }
+  #tag-looker { background-color: #4285f4; }
+  #tag-etl { background-color: #e45c0e; }
   
   .card p {
     font-size: 0.9rem;
@@ -183,6 +215,64 @@
     background: var(--text-color);
     color: var(--bg-color);
   }
+  #courses {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  #courses h2 {
+    margin-bottom: 15px;
+  }
+
+  .courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .course-card {
+    border-radius: 15px;
+    
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .course-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+  }
+
+  .course-card p {
+    color: #555;
+    margin: 0 0 10px 0;
+  }
+
+  .course-card .spacer {
+    flex-grow: 1;
+  }
+
+  .certificate-btn {
+    margin: 1rem;
+    border: 1px solid var(--text-color);
+    background: none;
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .certificate-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+  }
+
   
   .site-footer {
     background-color: #1f1f1f;
