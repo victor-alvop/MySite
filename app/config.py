@@ -14,4 +14,3 @@ class Config:
         "DB_SOURCE_URL": os.getenv("DATABASE_SOURCE_URL"),
         "DB_TARGET_URL": os.getenv("DATABASE_TARGET_URL")
     }
-

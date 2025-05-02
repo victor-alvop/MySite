@@ -159,7 +159,7 @@
   .technologies {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Espacio entre las etiquetas */
+    gap: 10px; 
     margin-top: 10px;
   }
 
@@ -201,8 +201,8 @@
   }
 
   .try-buttons {
-    display: flex; /* Organiza los elementos en fila */
-    gap: 10px; /* Espacio entre los elementos */
+    display: flex;
+    gap: 10px;
     padding: 1em;
     color: white;
     text-align: center;
@@ -245,7 +245,7 @@
 
   .course-card {
     border-radius: 15px;
-    flex: 0 1 calc(33.333% - 20px); /* No crece, pero puede encogerse */
+    flex: 0 1 calc(33.333% - 20px); 
     max-width: calc(33.333% - 20px);
     max-width: 100%;
     border-radius: 16px;

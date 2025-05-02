@@ -99,7 +99,7 @@
     }
 
     form.no-style {
-        all: unset; /* Quita todos los estilos heredados */
+        all: unset; 
     }
 
     .input-group {
@@ -245,11 +245,11 @@
 
     @media (max-width: 768px) {
         form {
-          flex-direction: column;  /* Pone los inputs en una sola columna en pantallas pequeñas */
+          flex-direction: column;  
             align-items: center;
         }
 
         .form-group {
-          width: 80%;  /* Los inputs ocuparán el 80% del ancho en dispositivos pequeños */
+          width: 80%;  
         }
         }

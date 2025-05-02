@@ -14,13 +14,11 @@ def datashakeDocs():
 @datashake_bp.route("/datashake", methods=["GET", "POST"])
 def datashake_index():
     if request.method == "POST":
-        # Obtener datos del formulario
         name = request.form.get('name-form')
         department = request.form.get('department-user')
         salary = request.form.get('salary-form')
         hours = request.form.get('hours-form')
 
-        # Crear y guardar nuevo empleado
         new_employee = Employee(name=name, department=department, salary=salary, hours=hours)
         db.session.add(new_employee)
         print(f"Datos recibidos: {name}, {department}, {salary}")
@@ -52,7 +50,6 @@ def data_transformation():
         target_transformation_selection = request.form.get('target-selection')
         
 
-        # Imprimir valores recibidos para depuración
         print(f"db: {db_selection}")
         print(f"source_column: {source_column}")
         print(f"target_column: {target_column}")
@@ -69,7 +66,6 @@ def data_transformation():
         if db_selection == 'source-database':
 
             if text_transformation == 'concatenate':
-                # Actualización masiva para Concatenar
                 stmt = (
                     update(Employee)
                     .values({source_column: getattr(Employee, source_column) + concat_text})
@@ -78,7 +74,7 @@ def data_transformation():
                 print(f"Actualización realizada para la columna {source_column} con el texto concatenado.")
 
             elif text_transformation == 'replace':
-                # Actualización masiva para Reemplazar
+                
                 stmt = (
                     update(Employee)
                     .values({source_column: func.replace(getattr(Employee, source_column), replace_text, with_text)})
@@ -86,20 +82,19 @@ def data_transformation():
                 print(f"Reemplazando '{replace_text}' con '{with_text}'")
 
             elif text_transformation == 'lower':
-                # Convertir a minúsculas
+                
                 stmt = (
                     update(Employee).values({source_column: func.lower(getattr(Employee, source_column))})
                 )
                 print("Convierte a minúsculas")
 
             elif text_transformation == 'upper':
-                # Convertir a mayúsculas
+                
                 stmt = (
                     update(Employee).values({source_column: func.upper(getattr(Employee, source_column))})
                 )
                 print("Convierte a mayúsculas")
 
-            # Construye el statement según la operación
             if number_transformation == 'sum':
                 value_number_transformation = Decimal(str(value_number_transformation))
                 stmt = update(Employee).values({
@@ -130,7 +125,7 @@ def data_transformation():
                 })
                 print(f"Se dividió cada fila de {source_column} entre {value_number_transformation}")
 
-            # Ejecuta y redirige si se construyó un statement
+
             if 'stmt' in locals():
                 db.session.execute(stmt)
                 db.session.commit()
@@ -139,28 +134,24 @@ def data_transformation():
         
         else:
             if target_transformation_selection == 'employee-count':
-                # Contar empleados agrupados por departamento, en minúscula
                 counts = db.session.query(
                     func.lower(Employee.department).label('department'),
                     func.count(Employee.id).label('count')
                 ).group_by(func.lower(Employee.department)).all()
 
-                # Recorrer los resultados y actualizar la tabla Summary
+
                 for dept_lower, count in counts:
-                    # Buscar coincidencia insensible a mayúsculas
                     summary = Summary.query.filter(func.lower(Summary.department) == dept_lower).first()
                     
                     if summary:
                         summary.employee_count = count
                     else:
-                        # (Opcional) crear nuevo registro si no existe
                         summary = Summary(department=dept_lower, employee_count=count)
                         db.session.add(summary)
 
                 db.session.commit()
 
             elif target_transformation_selection == 'avg-salary':
-                # Calcular promedio de salario por departamento en minúsculas
                 averages = db.session.query(
                     func.lower(Employee.department).label('department'),
                     func.avg(Employee.salary).label('avg_salary')
@@ -172,7 +163,6 @@ def data_transformation():
                     if summary:
                         summary.salary_sum = avg_salary
                     else:
-                        # (Opcional) crear si no existe
                         summary = Summary(department=dept_lower, salary_sum=avg_salary)
                         db.session.add(summary)
 
@@ -191,7 +181,6 @@ def data_transformation():
                     if summary:
                         summary.hours_sum = avg_hours
                     else:
-                        # (Opcional) crear si no existe
                         summary = Summary(department=dept_lower, hours_sum=hours_averages)
                         db.session.add(summary)
 
