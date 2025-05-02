@@ -7,6 +7,10 @@ from decimal import Decimal
 
 datashake_bp = Blueprint('datashake', __name__)
 
+@datashake_bp.route('/docs')
+def datashakeDocs():
+    return render_template('datashakeDocs.html')
+
 @datashake_bp.route("/datashake", methods=["GET", "POST"])
 def datashake_index():
     if request.method == "POST":

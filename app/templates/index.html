@@ -22,7 +22,7 @@
   <section class="hero">
     <h1>Hi <span>I´m Víctor 👋</span> a software engineer crafting smart solutions through <span>data</span> and <span>code.</span></h1>
     <div class="cta">
-      <button>Download CV</button>
+      <a href="{{ url_for('static', filename='pdf/VictorAlvarado-ES-MX.pdf') }}" download="VictorAlvarado-SoftwareEngineer.pdf"><button>Download CV</button></a>
       <a href="https://www.linkedin.com/in/victor-aapv/" target="_blank"><button>LinkedIn</button></a>
       <a href="mailto:vmalvaradop0@gmail.com"><button>Email</button></a>
       <a href="https://github.com/victor-alvop" target="_blank"><button>Github</button></a>
@@ -119,9 +119,9 @@
           <span class="tag" id="tag-etl"> ETL</span>
         </div>
         <p>After a shake, everything just hits different. This is a no code ETL tool perfect to extract, transform and load data from different Databases.</p>
-        <a href="{{ url_for('datashake.datashake_index') }}">
+          <a href="{{ url_for('datashake.datashake_index') }}">
             <button>Try</button>
-        </a>
+          </a>
       </div>
       <div class="card">
         <img src="{{ url_for('static', filename='assets/img/youtubeAnalizer.png') }}"/>

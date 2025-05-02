@@ -199,6 +199,16 @@
     font-size: 0.9rem;
     margin: 0.5rem 1rem;
   }
+
+  .try-buttons {
+    display: flex; /* Organiza los elementos en fila */
+    gap: 10px; /* Espacio entre los elementos */
+    padding: 1em;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    
+  }
   
   .card button {
     margin: 1rem;
@@ -215,6 +225,8 @@
     background: var(--text-color);
     color: var(--bg-color);
   }
+
+
   #courses {
     padding: 20px;
     font-family: Arial, sans-serif;

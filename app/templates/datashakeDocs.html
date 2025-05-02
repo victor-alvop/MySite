@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataShake - No-Code Intelligent ETL Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dataShakeDocs.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/img/DataShakeLogo-NoBackground.png') }}" width="50px" height="50px" alt="Logo">
+        </div>
+        <nav class="nav-buttons">
+        <ul>
+            <li data-target="experience"> 
+                <a href="{{ url_for('home.home') }}">Home</a>
+            </li>
+            <li>
+                <a href="{{ url_for('datashake.datashake_index') }}" class="btn">Try project</a>
+            </li>
+        </ul>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <h1>DataShake</h1>
+        <p>Your No-Code platform to automate ETL workflows visually, intuitively, and without writing code</p>
+    </div>
+
+    <section>
+        <h2>What is DataShake?</h2>
+        <p>DataShake is a <strong>No-Code ETL solution</strong> that enables you to transform, clean, and migrate data between multiple sources and targets with just a few clicks. Its friendly interface empowers even non-technical users to build powerful and flexible data pipelines.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+        <li>Direct extraction from relational databases.</li>
+        <li>Field transformations for both text and numeric types (concatenation, replacement, arithmetic operations, casing).</li>
+        <li>Automatic aggregations such as group counts and averages.</li>
+        <li>Schema synchronization between source and target datasets.</li>
+        <li>Designed to support various scenarios: HR, finance, logistics, and more.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Use Case Example: Employee Management</h2>
+        <p>This real-world example demonstrates how DataShake can be used in a Human Resources scenario:</p>
+        <ul>
+        <li>Insert new employee records into a source database.</li>
+        <li>Transform fields such as names and departments (e.g., uppercase conversion or text concatenation).</li>
+        <li>Perform numeric operations on salaries and work hours (addition, multiplication, etc.).</li>
+        <li>Automatically generate summaries such as employee counts per department and average salaries.</li>
+        </ul>
+        <p>This case illustrates how DataShake can automate internal processes without needing developers.</p>
+    </section>
+
+    <section>
+        <h2>Who Is This Tool For?</h2>
+        <ul>
+        <li>Data analysts seeking to automate workflows without coding.</li>
+        <li>Business teams needing to integrate diverse data sources.</li>
+        <li>Startups and companies aiming to reduce ETL implementation time.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Getting Started</h2>
+        <p>DataShake is built on <strong>Flask</strong> and <strong>SQLAlchemy</strong>, but requires no coding interaction. Just deploy the app, load your data, and begin transforming it visually.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 DataShake - Automate your data without writing code by Victor Alvarado</p>
+    </footer>
+
+</body>
+</html>
