@@ -1,0 +1,134 @@
+/* Paleta de colores */
+:root {
+    --background-color: #f9f9f9; /* Fondo claro */
+    --text-color: #333; /* Texto oscuro */
+    --footer-color: #777; /* Texto footer */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav li {
+    cursor: pointer;
+    position: relative;
+}
+
+nav li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+li a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+ul {
+    padding-left: 1.2em;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+thead {
+    background-color: #264EFC;
+    color: white;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+td img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-container {
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #264EFC;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+

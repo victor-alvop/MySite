@@ -1,18 +1,24 @@
-from sqlalchemy import text
-from app import db  # Asegúrate que `db` es tu instancia de SQLAlchemy
+from flask import Flask, render_template, jsonify
+import requests
 
-# Ajusta esto a tu tabla y columna reales
-tabla = "employees"
-columna = "salary"
+def api_consult():
+    url = 'https://api.coingecko.com/api/v3/coins/markets'
+    params = {
+        'vs_currency': 'usd',
+        'order': 'market_cap_desc',
+        'per_page': 10,
+        'page': 1,
+        'sparkline': False
+    }
 
-# Sentencia SQL que hace el cambio
-sql = f"""
-ALTER TABLE {tabla}
-ALTER COLUMN {columna} TYPE numeric(10, 2)
-USING {columna}::numeric;
-"""
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()  # lanza excepción si la respuesta no es 200
+        data = response.json()
+        return data
+    except Exception as e:
+        return {'error': str(e)}
 
-# Ejecutar desde SQLAlchemy
-with db.engine.connect() as connection:
-    connection.execute(text(sql))
-    connection.commit()
+# Llamada de prueba
+result = api_consult()
+print(result)

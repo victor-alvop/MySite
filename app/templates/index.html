@@ -124,18 +124,22 @@
           </a>
       </div>
       <div class="card">
-        <img src="{{ url_for('static', filename='assets/img/youtubeAnalizer.png') }}"/>
-        <h3>Youtube Analizer</h3>
+        <img src="{{ url_for('static', filename='assets/img/cryptoDashboard.png') }}"/>
+        <h3>Crypto API and Dashboard</h3>
         <div class="tags">
           <span class="tag" id="tag-python">Python</span>
           <span class="tag" id="tag-flask">Flask</span>
           <span class="tag" id="tag-postgresql">PostgreSQL</span>
           <span class="tag" id="tag-data-analysis">Data analysis</span>
-          <span class="tag" id="tag-chatgpt">Chat GPT API</span>
+          <span class="tag" id="tag-looker">Looker Studio</span>
+          <span class="tag" id="tag-chatgpt">Crypto API</span>
         </div>
-        <p>Don’t get canceled by your audience.
-          Use this YouTube Audience Analyzer to get objective recommendations for your videos, community management, and comment moderation. Understand your viewers better and grow your channel with confidence.</p>
-        <button>Comming Soon</button>
+        <p>Cryptocurrency API Integration and Real-Time Dashboard.
+          Created a cryptocurrency API integration that fetches real-time market data, stores it in a database, and displays dynamic price trends on an interactive dashboard for easy tracking and analysis.
+          </p>
+        <a href="{{ url_for('crypto_info.cryptoInfo') }}">
+          <button>Try</button>
+        </a>
       </div>
       <div class="card">
         <img src="{{ url_for('static', filename='assets/img/hrAnalizer.png') }}"/>
