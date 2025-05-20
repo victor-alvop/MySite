@@ -173,7 +173,7 @@
                     <tr>
                       <td>{{ summary.department }}</td>
                       <td>{{ summary.employee_count }}</td>
-                      <td>{{ summary.salary_sum }}</td>
+                      <td>{{ summary.salary_sum|round(2) }}</td>
                       <td>{{ summary.hours_sum }}</td>
                     </tr>
                   {% endfor %}
