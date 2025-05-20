@@ -25,3 +25,13 @@ class Crypto(db.Model):
 
     def __repr__(self):
         return f'<Crypto {self.name}>'
+    
+class CryptoActualPrice(db.Model):
+    __bind_key__ = 'DB_SOURCE_URL'
+    __tablename__ = 'actual_price'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(255), nullable=False)
+    symbol = db.Column(db.String(10), nullable=False)
+    price = db.Column(db.Numeric, nullable=False)
+    date = db.Column(db.DateTime, nullable=False) 

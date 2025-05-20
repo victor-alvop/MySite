@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crypto Data Pipeline - Documentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cryptoDocs.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/bitcoinLogo.png') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/img/bitcoinLogo.png') }}" width="50" height="50" alt="Logo" />
+        </div>
+        <nav class="nav-buttons">
+            <ul>
+                <li><a href="{{ url_for('home.home') }}">Home</a></li>
+                <li><a href="{{ url_for('crypto_info.cryptoInfo') }}" class="btn">Try project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <h1>Crypto Data Pipeline</h1>
+        <p>Extracting and Visualizing Cryptocurrency Market Data with PostgreSQL and Looker Studio</p>
+    </div>
+
+    <section>
+        <h2>Project Overview</h2>
+        <p>This project connects a backend server to the <strong>CoinGecko API</strong> to extract real-time data on the most important cryptocurrencies. The data is stored in a <strong>PostgreSQL</strong> database and visualized through a <strong>Looker Studio</strong> dashboard.</p>
+    </section>
+
+    <section>
+        <h2>Data Extraction and Storage</h2>
+        <ul>
+            <li>The backend server queries CoinGecko API for key cryptocurrencies.</li>
+            <li>Extracted data includes minimum price, maximum price, current price, and average price over time.</li>
+            <li>Data is inserted and updated in a PostgreSQL database to maintain historical records.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dashboard Visualization</h2>
+        <p>The Looker Studio dashboard provides two main views:</p>
+        <ul>
+            <li>A table showing the minimum, maximum, current, and average prices of each cryptocurrency.</li>
+            <li>A historical price chart visualizing price trends over time.</li>
+            <li>A separate page displays a volatility chart comparing the price fluctuations of each cryptocurrency.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Technologies Used</h2>
+        <ul>
+            <li><strong>Backend:</strong> Python Flask server for API integration and data handling.</li>
+            <li><strong>Database:</strong> PostgreSQL for robust data storage and historical tracking.</li>
+            <li><strong>Visualization:</strong> Looker Studio for interactive dashboards and data presentation.</li>
+            <li><strong>API:</strong> CoinGecko public API for reliable cryptocurrency market data.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <ol>
+            <li>The server sends requests to CoinGecko API.</li>
+            <li>Retrieved JSON data is parsed and transformed as needed.</li>
+            <li>Processed data is saved in PostgreSQL, ensuring up-to-date and historical accuracy.</li>
+            <li>Looker Studio connects to the database to fetch data and refresh dashboard visualizations automatically.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Benefits</h2>
+        <ul>
+            <li>Automated data pipeline reduces manual data collection and errors.</li>
+            <li>Historical tracking enables trend analysis and volatility assessment.</li>
+            <li>Interactive dashboards provide easy-to-understand insights for decision-making.</li>
+            <li>Scalable architecture allows adding more cryptocurrencies or metrics as needed.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Crypto Data Pipeline by Victor Alvarado</p>
+    </footer>
+</body>
+</html>

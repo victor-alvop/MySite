@@ -6,7 +6,6 @@
     <title>Top cryptos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cryptoInfo.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='assets/img/bitcoinLogo.png') }}" type="image/x-icon">
-
 </head>
 <body>
     <header>
@@ -19,7 +18,7 @@
                 <a href="{{ url_for('home.home') }}">Home</a>
             </li>
             <li>
-                <a href="#">Read Docs</a>
+                <a href="/crypto/crypto-docs">Read Docs</a>
             </li>
         </ul>
         </nav>
@@ -31,7 +30,7 @@
                 <form method="POST" action="{{ url_for('crypto_info.crypto_update') }}">
                     <button type="submit" class="btn">Update Data</button>
                 </form>
-                <a href="#" class="btn">Dashboard soon</a>
+                <a href="https://lookerstudio.google.com/reporting/a99814fb-1897-499c-a8e5-845d0bfacafc" class="btn" target="_blank">Dashboard</a>
             </div>
         </div>
         <p>This is the view of the historic cryptocurrency database, which is populated using an API. By clicking the "Update" button, you can retrieve the latest data, which will be instantly reflected in the database. This database is live-connected to the Dashboard, allowing real-time updates. Feel free to give it a try! :)</p>

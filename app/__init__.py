@@ -8,7 +8,6 @@ def create_app():
     app.config.from_object('app.config.Config')
     db.init_app(app)
 
-    # Importa y registra los blueprints
     from app.routes.home import home_bp
     from app.routes.datashake import datashake_bp
     from app.routes.cryptoInfo import crypto_info_bp
