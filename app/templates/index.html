@@ -124,7 +124,7 @@
           </a>
       </div>
       <div class="card">
-        <img src="{{ url_for('static', filename='assets/img/cryptoDashboard.png') }}"/>
+        <img src="{{ url_for('static', filename='assets/img/btcLOGO.png') }}"/>
         <h3>Crypto API and Dashboard</h3>
         <div class="tags">
           <span class="tag" id="tag-python">Python</span>
@@ -142,17 +142,19 @@
         </a>
       </div>
       <div class="card">
-        <img src="{{ url_for('static', filename='assets/img/hrAnalizer.png') }}"/>
-        <h3>The best candidate</h3>
+        <img src="{{ url_for('static', filename='assets/img/storewh.png') }}"/>
+        <h3>Electronics Store Data Warehouse and ETL</h3>
         <div class="tags">
           <span class="tag" id="tag-python">Python</span>
-          <span class="tag" id="tag-flask">Flask</span>
+          <span class="tag" id="tag-flask">ETL</span>
           <span class="tag" id="tag-postgresql">PostgreSQL</span>
-          <span class="tag" id="tag-data-analysis">Data analysis</span>
-          <span class="tag" id="tag-chatgpt">Chat GPT API</span>
+          <span class="tag" id="tag-data-analysis">Data Warehouse</span>
+          <span class="tag" id="tag-python">Airflow</span>
         </div>
-        <p>A fast candidate resume analyzer, just upload the resumen and the candidate URLs and get a summary of their skills, experience, projects and how can the help you.</p>
-        <button>Comming soon</button>
+        <p>Designed and created a database, then developed the ETL process using Python and Airflow to build a data warehouse.</p>
+        <a href="{{ url_for('warehouse.store_warehouse') }}">
+          <button>Try</button>
+        </a>
       </div>
     </div>
   </section>

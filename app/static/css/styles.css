@@ -1,4 +1,26 @@
 :root {
+  --bg-color: #ffffff; /* lavanda claro */
+  --text-color: #000000; /* morado oscuro */
+  --accent-color: #6e00d4; /* violeta vibrante */
+  --border-color: #d8b4fe; /* lavanda suave */
+  --shadow-color: rgba(0,0,0,0.1);
+  --box-shadow: 0 4px 12px 4px  var(--shadow-color);
+  --card-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000; /* morado muy oscuro */
+  --text-color: #ffffff; /* blanco para contraste */
+  --accent-color: #6e00d4; /* morado pastel claro */
+  --border-color: #7e22ce; /* morado intermedio */
+  --shadow-color: rgba(21, 0, 40, 0.1); /* acento violeta translúcido */
+  --box-shadow: 0 4px 12px 4px  var(--shadow-color);
+  --card-color: #101010;
+}
+
+  /*
+  GREY AND WHITE
+  :root {
     --bg-color: #ffffff;
     --text-color: #1c1c1e;
     --accent-color: #6e6e73;
@@ -10,7 +32,9 @@
     --text-color: #ffffff;
     --accent-color: #a1a1a6;
     --border-color: #444;
-  }
+  } 
+
+  */
   
   * {
     margin: 0;
@@ -117,6 +141,10 @@
   h2 {
     margin-bottom: 1rem;
   }
+
+  .important-tittle{
+    color: #6e00d4;
+  }
   
   .experience {
     display: flex;
@@ -131,12 +159,12 @@
   }
   
   .card {
-    background-color: var(--bg-color);
+    background-color: var(--card-color);
     
     border-radius: 16px;
     overflow: hidden;
     max-width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: var(--box-shadow);
   }
   
   
@@ -250,11 +278,12 @@
     max-width: 100%;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: auto;
+    background-color: var(--card-color);
   }
 
   .course-card h3 {

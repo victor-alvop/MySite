@@ -9,12 +9,14 @@ def create_app():
     db.init_app(app)
 
     from app.routes.home import home_bp
+    from app.routes.home import store_warehouse_bp
     from app.routes.datashake import datashake_bp
     from app.routes.cryptoInfo import crypto_info_bp
 
     app.register_blueprint(home_bp)
     app.register_blueprint(datashake_bp)
     app.register_blueprint(crypto_info_bp, url_prefix='/crypto')
+    app.register_blueprint(store_warehouse_bp)
 
     return app
 
