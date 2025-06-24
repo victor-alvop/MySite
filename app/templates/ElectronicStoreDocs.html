@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Docs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ElectronicStoreDocs.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/WarehouseIcon-NoBkg.png') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/img/WarehouseIcon-NoBkg.png') }}" width="50" height="50" alt="Logo" />
+        </div>
+        <nav class="nav-buttons">
+            <ul>
+                <li><a href="{{ url_for('home.home') }}">Home</a></li>
+                <li><a href="https://github.com/victor-alvop/StoreWarehouse" class="btn" target="_blank">Try project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <h1>Data Warehouse</h1>
+        <p>Built ETL pipelines with Airflow to move production data into a high-performance Data Warehouse.</p>
+    </div>
+
+    <section>
+        <h2>Business Challenge</h2>
+        <p>An electronics e-commerce company faced growing pains in scaling their data analytics. While their OLTP systems handled thousands of daily transactions efficiently, their database structure wasn't optimized for deep analytical queries (OLAP). Extracting insights required multiple complex joins, creating critical bottlenecks.</p>
+        <li>Heavy reliance on technical teams to generate reports.</li>
+        <li>Limited traceability and challenges auditing historical data.</li>
+        <li>No unified or intuitive data model for business users.</li> 
+    </section>
+
+    <section>
+        <h2>Solution</h2>
+        <p>Designed a dimensional-model Data Warehouse to centralize and simplify analytics. Automated ETL pipelines with Apache Airflow eliminated complex joins and enabled fast, reliable, self-service reporting — reducing tech team bottlenecks and unlocking data-driven decisions.</p>
+        <p><strong>Approach:</strong> Diagnose → Model → ETL → Orchestrate</p>
+    </section>
+
+    <section>
+        <h2>Diagnose: Transformed OLTP Chaos into Fast, Scalable Analytics</h2>
+        <p>Normalized production data slowed down business insights. I restructured it into a dimensional Data Warehouse with aggregated fact tables and decoupled dimensions — enabling fast, efficient queries and real-time dashboards. Automated ETL with Apache Airflow ensures fresh, reliable data with zero manual overhead.</p>
+    </section>
+
+    <section>
+        <h2>Model: High-Speed Dimensional Data Warehouse for Instant Insights</h2>
+        <p>Built a classic dimensional model (date, customer, store, employee, supplier) enabling fast, scalable analysis without stressing production systems. Fact tables like fact_sales power rich, multi-angle analytics. Pre-aggregated tables (agg_daily_sales_product, etc.) deliver lightning-fast dashboards and KPIs — no heavy queries, no lag, just real-time business clarity.</p>
+        <li>Simplifies data access for analysts.</li>
+        <li>Ensures reliable traceability and historical analysis.</li>
+        <li>Eliminates complex joins across multiple operational tables.</li>
+        <a href=https://github.com/victor-alvop/StoreWarehouse/tree/main/SQL/Warehouse target="_blank"><button>SQL Queries</button></a>
+    </section>
+
+    <section>
+        <h2>ETL: Streamlined ETL Process Powering Reliable, Fast Analytics</h2>
+        <p>Implemented a clear, efficient ETL strategy: direct 1-to-1 migration for dimension and fact tables with enforced foreign keys for data integrity and traceability. For aggregation tables, ETL performs smart joins and groupings across orders, products, customers, and dates — calculating key metrics like total sales and order counts. This pre-processing fuels optimized summary tables, enabling instant reports and dashboards without real-time recalculations. For this i started creating testing python codes before creating Airflow Dags.</p>
+        <a href=https://github.com/victor-alvop/StoreWarehouse/tree/main/Scripts/ETL target="_blank"><button>Python Code</button></a>
+    </section>
+
+    <section>
+        <h2>Orchestrate: Scalable Modular ETL with Apache Airflow</h2>
+        <p>Designed a modular Apache Airflow pipeline with separate tasks per table—dimensions, facts, and aggregates—ensuring clean, maintainable, and scalable code. Daily scheduled runs keep data fresh and accurate, enabling seamless updates, new data sources, and business logic changes without disrupting the workflow. This robust orchestration guarantees data integrity and supports scalable analytics growth.</p>
+        <a href=https://github.com/victor-alvop/StoreWarehouse/tree/main/Scripts/DAGS target="_blank"><button>Airflow Dags</button></a>
+    </section>
+
+    <section>
+        <h2>Driving Business Impact with Scalable Data Solutions</h2>
+        <p>By implementing a robust Data Warehouse, automated ETL pipelines, and modular Airflow orchestration, I’ve enabled the transformation of complex operational data into fast, reliable dashboards and KPIs. This empowers teams to make informed, data-driven decisions without delays or technical bottlenecks.</p>
+        <p><strong>Data never looked this good!</strong></p>
+        <a href=# target="_blank"><button>Dive in 🚀</button></a>
+    </section>
+
+    <footer>
+        <p>© 2025 Electronics Store Warehouse by Victor Alvarado</p>
+    </footer>
+</body>
+</html>

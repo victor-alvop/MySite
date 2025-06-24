@@ -9,4 +9,4 @@ def home():
 
 @store_warehouse_bp.route('/store-warehouse')
 def store_warehouse():
-    return render_template('Progress.html')
+    return render_template('ElectronicStoreDocs.html')
